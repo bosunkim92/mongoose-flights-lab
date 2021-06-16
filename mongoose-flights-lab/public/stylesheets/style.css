@@ -1,8 +1,32 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #414142;
+  color: white;
 }
 
 a {
   color: #00B7FF;
 }
+
+#new-form-fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a{
+  margin: 10px;
+}
+
+fieldset {
+  margin-top: 15px;
+}
+
+th, td {
+  padding-right: 10px;
+}
+

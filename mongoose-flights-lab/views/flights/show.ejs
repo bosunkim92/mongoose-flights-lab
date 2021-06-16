@@ -31,15 +31,29 @@
                      <td><%= f.airport %></td>
                      <td><%= f.flightNo %></td>
                      <td><%= f.departs %></td>
-                     <td><a href="/flights/<%= f._id %>">DETAILS</a></td>
                  </tr>
                 <% }) %>
             </tbody>
+            <thead2>
+                <tr>
+                    <th>DESTINATION AIRPORT</th>
+                    <th>ARRIVAL TIME</th>
+                </tr>
+            </thead2>
+            <tbody2>
+                <% flights.destinations.forEach(des => { %>
+                 <tr>
+                     <td><%= des.airport %></td>
+                     <td><%= des.arrival %> </td>
+                 </tr>
+                <% }) %> 
+                <tr>
+                    
+                </tr>
+            </tbody2>
         </table>
 
     </fieldset>
-            
-            <h1>Book Your Flight Today!</h1>
-            <a href="/flights/new">Click Here to Enter Flight Info</a>
+
 </body>
 </html>
