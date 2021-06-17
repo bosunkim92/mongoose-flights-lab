@@ -31,7 +31,9 @@ function create(req, res) {
 
 function show(req, res){
     console.log('HTTP request is hitting the right show controller function');
-    Flight.findById(req.params.id, function(err, flight){
-        res.render('flights/show');
+    Flight.findById(req.params.id, function(err, flights){
+        res.render('flights/show',{
+            title: 'Flight Info.', flights
+        });
     })
 }

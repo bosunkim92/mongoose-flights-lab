@@ -25,25 +25,27 @@
             </thead>
 
             <tbody>
-                <% flights.forEach(f => { %>
                  <tr>
-                     <td><%= f.airline %></td>
-                     <td><%= f.airport %></td>
-                     <td><%= f.flightNo %></td>
-                     <td><%= f.departs %></td>
+                     <td><%= flights.airline %></td>
+                     <td><%= flights.airport %></td>
+                     <td><%= flights.flightNo %></td>
+                     <td><%= flights.departs %></td>
                  </tr>
-                <% }) %>
             </tbody>
             <thead2>
                 <tr>
+                    <th></th>
                     <th>DESTINATION AIRPORT</th>
+                    <th></th>
                     <th>ARRIVAL TIME</th>
                 </tr>
             </thead2>
             <tbody2>
                 <% flights.destinations.forEach(des => { %>
                  <tr>
+                     <td></td>
                      <td><%= des.airport %></td>
+                     <td></td>
                      <td><%= des.arrival %> </td>
                  </tr>
                 <% }) %> 
@@ -52,8 +54,23 @@
                 </tr>
             </tbody2>
         </table>
-
     </fieldset>
+    <form id="new-destination" action="/flights/<%= flights.id %>/destinations" method="POST">
+    <h3>Add Your Destination</h3>
+        <fieldset id="destination-info-new">
+                <select name="airport">
+                    <option value="AUS">ATL</option>
+                    <option value="DFW">DFW</option>
+                    <option value="DEN" selected>DEN</option>
+                    <option value="LAX">LAX</option>
+                    <option value="SAN">SAN</option>
+                </select>
+                <label>Arrival Date & Time</label>
+                <input type="datetime-local" name="arrival" id="date-input">
+                <button type="submit">Add Flight</button>
+        </fieldset>
+    </form>
+
 
 </body>
 </html>
